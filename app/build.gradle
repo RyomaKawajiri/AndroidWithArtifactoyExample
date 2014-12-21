@@ -11,17 +11,17 @@ buildscript {
 apply plugin: 'com.android.application'
 
 //apply plugin: 'com.jfrog.artifactory'
-artifactory {
-    contextUrl = "${artifactory_contextUrl}"
-    resolve {
-        repository {
-            repoKey = 'repo'
-            username = artifactory_user
-            password = artifactory_password
-            maven = true
-        }
-    }
-}
+//artifactory {
+//    contextUrl = "${artifactory_contextUrl}"
+//    resolve {
+//        repository {
+//            repoKey = 'repo'
+//            username = artifactory_user
+//            password = artifactory_password
+//            maven = true
+//        }
+//    }
+//}
 
 repositories {
     jcenter()
