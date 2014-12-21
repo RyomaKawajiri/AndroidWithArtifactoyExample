@@ -23,15 +23,27 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
+        // classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
     }
 }
 
 apply plugin: 'java'
-// apply plugin: "com.jfrog.artifactory"
+
+//apply plugin: "com.jfrog.artifactory"
+//artifactory {
+//    resolve {
+//        contextUrl = "${artifactory_contextUrl}"
+//        repository {
+//            repoKey = 'repo'
+//            username = artifactory_user
+//            password = artifactory_password
+//            maven = true
+//        }
+//    }
+//}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
-    compile(group: 'mibiq.localization', name: 'miubiq-localization', version: '0.0.0-develop-SNAPSHOT')
+    compile(group: 'miubiq.gradle.demo', name: 'GradleDemo', version: '0.0.0')
+    testCompile 'junit:junit:4.11'
 }
