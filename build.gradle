@@ -9,6 +9,8 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
     }
 }
 
@@ -22,4 +24,17 @@ allprojects {
             url "${artifactory_contextUrl}/repo"
         }
     }
+
+    apply plugin: "com.jfrog.artifactory"
+//    artifactory {
+//        resolve {
+//            contextUrl = "${artifactory_contextUrl}"
+//            repository {
+//                repoKey = 'repo'
+//                username = artifactory_user
+//                password = artifactory_password
+//                maven = true
+//            }
+//        }
+//    }
 }

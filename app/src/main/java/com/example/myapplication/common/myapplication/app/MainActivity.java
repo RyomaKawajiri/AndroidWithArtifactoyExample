@@ -1,4 +1,4 @@
-package jp.ac.ics.localization.myapplication2.common.myapplication4.app;
+package com.example.myapplication.common.myapplication.app;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;

@@ -4,12 +4,24 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.14.2'
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
+        // classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
     }
 }
 
 apply plugin: 'com.android.application'
-apply plugin: "com.jfrog.artifactory"
+
+//apply plugin: 'com.jfrog.artifactory'
+artifactory {
+    contextUrl = "${artifactory_contextUrl}"
+    resolve {
+        repository {
+            repoKey = 'repo'
+            username = artifactory_user
+            password = artifactory_password
+            maven = true
+        }
+    }
+}
 
 repositories {
     jcenter()
@@ -20,7 +32,7 @@ android {
     buildToolsVersion "21.1.1"
 
     defaultConfig {
-        applicationId "jp.ac.ics.localization.myapplication2.common.myapplication4.app"
+        applicationId "com.example.myapplication.common.myapplication.app"
         minSdkVersion 9
         targetSdkVersion 21
         versionCode 1
@@ -40,21 +52,10 @@ android {
     }
 }
 
-artifactory {
-    resolve {
-        contextUrl = "${artifactory_contextUrl}"
-        repository {
-            repoKey = 'repo'
-            username = artifactory_user
-            password = artifactory_password
-            maven = true
-        }
-    }
-}
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.2'
 
     compile project(':common-lib')
+    // compile(group: 'miubiq.gradle.demo', name: 'GradleDemo', version: '0.0.0')
 }

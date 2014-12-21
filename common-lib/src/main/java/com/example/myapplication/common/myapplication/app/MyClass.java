@@ -18,12 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-package jp.ac.ics.localization.myapplication2.common.myapplication4.app2;
+package com.example.myapplication.common.myapplication.app;
 
-import miubiq.localization.wireless.gmap.Location;
+
+import demo.Hello;
 
 public class MyClass {
-    public MyClass() {
-        Location location = new Location(0, 0, "", 0);
+    public MyClass()
+    {
+    }
+
+    public Hello hoge() {
+        return new Hello();
     }
 }
