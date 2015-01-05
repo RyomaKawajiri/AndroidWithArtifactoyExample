@@ -29,18 +29,18 @@ buildscript {
 
 apply plugin: 'java'
 
-//apply plugin: "com.jfrog.artifactory"
-//artifactory {
-//    resolve {
-//        contextUrl = "${artifactory_contextUrl}"
-//        repository {
-//            repoKey = 'repo'
-//            username = artifactory_user
-//            password = artifactory_password
-//            maven = true
-//        }
-//    }
-//}
+apply plugin: "com.jfrog.artifactory"
+artifactory {
+    resolve {
+        contextUrl = "${artifactory_contextUrl}"
+        repository {
+            repoKey = 'repo'
+            username = artifactory_user
+            password = artifactory_password
+            maven = true
+        }
+    }
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
